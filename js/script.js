@@ -504,14 +504,20 @@ view.when().then(function() {
                   feature.graphic = result.graphic;
                   highlight = layerView1.highlight(result.graphic);
                 } else {
-                  feature.graphic = graphic;   
+                  feature.graphic = graphic;
+                  cdSearch.clear();   
                   $("#sidebarTwo").removeClass('active');  
                 }
                 $(document).ready(function(){
                     $("#toggleTwo").click(function(){
                         highlight.remove(result.graphic);
                     })
-                })  
+                });
+                $(document).ready(function(){
+                    $(".toggle-btn").click(function(){
+                        highlight.remove(result.graphic);
+                    })
+                });  
               });
             });  
         });
@@ -1347,7 +1353,8 @@ function setContentInfoTwo(results) {
                   feature.graphic = result.graphic;
                   highlight = layerView2.highlight(result.graphic);  
                 } else {
-                  feature.graphic = graphic;   
+                  feature.graphic = graphic;
+                  cdSearch.clear();   
                   $("#sidebar").removeClass('active');   
                 }
                 $(document).ready(function(){
@@ -1443,6 +1450,7 @@ const congDist = new FeatureLayer({
     labelingInfo: [congDistLabel],
     visible: false,
     popupEnabled: false,
+    minScale: 0,
     //maxScale: 144448.1,
     popupTemplate: {
         outFields: ["*"],
@@ -2640,11 +2648,11 @@ function setContentInfoFour(results) {
             //congDist.visible = false;
             $(".stateLeg").removeClass('pressed');
             $(".htcCityTitle").hide();
-            $(".cdLeg").hide();
+            /*$(".cdLeg").hide();
             $("#cdTitle").hide();
             $("#cdFilt").hide();
             $("#cdTitleTwo").hide();
-            $("#cdsearcher").hide();
+            $("#cdsearcher").hide();*/
             $(".htcProjTitle").show();
             $(".htcCityLeg").hide();
             $(".htcProjLeg").show();
@@ -2727,18 +2735,18 @@ function setContentInfoFour(results) {
     
     $(document).ready(function() {
 
-    function changeTab(){
-      var target = $(this).data('target');
+      function changeTab(){
+        var target = $(this).data('target');
 
-      $('#tab-navigation li').removeClass('selected');
-      $('#tab-navigation li').addClass('noSelected');
-      $(this).removeClass('noSelected');
-      $(this).addClass('selected');    
-      $('.tabContainer').addClass('hidden');
-      $(target).removeClass('hidden');
-    }
+        $('#tab-navigation li').removeClass('selected');
+        $('#tab-navigation li').addClass('noSelected');
+        $(this).removeClass('noSelected');
+        $(this).addClass('selected');    
+        $('.tabContainer').addClass('hidden');
+        $(target).removeClass('hidden');
+      }
 
-    $('#tab-navigation li').click(changeTab);
+      $('#tab-navigation li').click(changeTab);
 
     });    
     

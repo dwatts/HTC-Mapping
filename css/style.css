@@ -3,7 +3,6 @@ html,body {
     margin: 0;
     overflow: hidden;
     margin-top: 0px;
-
 }
 
 #viewDiv {
@@ -44,6 +43,10 @@ html,body {
     padding-top: 7px;
     width: 100% !important;
     height: 300px !important;
+}
+
+.econAst {
+    padding-top: 13px;
 }
 
 /*********End Chart Code************/
@@ -123,6 +126,7 @@ hr {
     opacity: .5;
 }
 
+
 /*****************Sidebar CSS***************/
 
 .menu  input[type='checkbox'] {
@@ -161,7 +165,7 @@ hr {
 #sidebar {
 	width: 460px;
     height: calc(100% - 32px);
-    max-height: 690px;
+    max-height: 650px;
 	position: absolute;
 	z-index: 1001;
     top: 15px;
@@ -197,11 +201,11 @@ hr {
 .sidebarContainer {
     display: block;
     position: absolute;
-    background-color: [255,255,255,0];
-    left: ;
+    background-color: rgba(255,255,255,0);
+    /*left: 0;*/
     color: rgb(0,66,104);
     width: calc(100% - 8px);
-    height: calc(100% - 95px);
+    height: calc(100% - 100px);
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 7px;
